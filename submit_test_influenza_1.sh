@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -t 11- 
+#SBATCH -t 3- 
 #SBATCH -N 1 
 #SBATCH -n 1
 #SBATCH --mail-type=end
