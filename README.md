@@ -21,7 +21,7 @@ install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
 ```bash
 
 #!/bin/bash
-#SBATCH --t=3
+#SBATCH -t 3- 
 #SBATCH --mail-user=your_email@example.com
 #SBATCH --output=./slurmlogs/slurm-%j.out
 module load r/4.1.3
