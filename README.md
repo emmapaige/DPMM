@@ -1,6 +1,6 @@
 # Influenza Analysis Workflow
 
-This repository contains R scripts for analyzing H1N1 data with a Dirichlet Process Mixture Model. It includes steps for data preparation, a series of MCMC procedures designed to cluster the genome, and a post-analysis summarization of sites that have changed in frequency due to the treatment Oseltamivir.
+This repository contains R scripts for analyzing the last segment of the virus H1N1 with a Dirichlet Process Mixture Model. It includes steps for data preparation, a series of MCMC procedures designed to cluster the genome, and a post-analysis summarization of sites that have changed in frequency due to the treatment Oseltamivir.
 
 ## Getting Started
 
