@@ -16,6 +16,8 @@ install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
 
 Clone this repository:
 
+git clone https://github.com/emmapaige/DPMM.git
+
 
 ### Running the Analysis
 
