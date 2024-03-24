@@ -2,6 +2,7 @@ source("library_cmdline.R")
 source("source.R")
 source("Allfcns2.R")
 
+user <- cmdline.strings("user") #so we can check jobs are finished before proceeding to next steps in shj_algor
 shortname<-cmdline.strings("shortname") #For simulated data, shortname = Test 
 copy<-cmdline.numeric("copy") #For possible multiple tests 
 CORE<-cmdline.numeric("core") #Number of cores needed for mclapply
