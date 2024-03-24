@@ -1,42 +1,55 @@
-submit_test_influenza_1.sh illustrates how to create a job submission file to run through the algorithm. To run the code, go to the directory where all the supporting scripts are located. Make sure to replace your_username with your username. Also make sure to create the Rlogs and slurmlogs folder in your working directory. Once you have created the submission file type SBATCH 
-submit_test_influenza_1.sh
+# Influenza Analysis Workflow
+
+This repository contains R scripts for analyzing influenza data with a Dirichlet Process Mixture Model. It includes steps for data preparation, a series of MCMC clustering procedures, and post-analysis summarization.
+
+## Getting Started
+
+### Prerequisites
+
+Ensure R (version 4.1.3 or later) is installed along with the following packages:
+
+install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
+
+
+### Running the Analysis
+
+1. Go to the directory where all the supporting scripts are located
+2. Create `Rlogs` and `slurmlogs` directories in your working directory.
+3. Modify `submit_test_influenza_1.sh` with your details (make sure to add more time and cores if necessary and change your username and email):
+
+```bash
 
 #!/bin/bash
-
+#SBATCH --t=3
 #SBATCH --mail-user=your_email@example.com
 #SBATCH --output=./slurmlogs/slurm-%j.out
-
-module add r/4.1.3
-
+module load r/4.1.3
 R CMD BATCH --vanilla --args --shortname=Test --core=1 --copy=1 --user=your_username Influenza_Test_1.R ./Rlogs/Influenza_Test_1.out
 
+Submit the job with:
+
+sbatch submit_test_influenza_1.sh
 
 
-Workflow Overview
+### Workflow Overview
 
 The workflow is divided into several steps, implemented across multiple R scripts:
 
-1.   Setup (Influenza_Test_1.R): Prepares the influenza data for analysis and sets up global parameters
+1. Setup (Influenza_Test_1.R): Prepares the influenza data for analysis and sets up global parameters
 
-2.   Main Script (SHJ_algor.R): Performs the main analysis, including pre-processing, submits the hierarchical SCMH analysis, and performs block MH (Metropolis-Hastings)
+2. Main Script (SHJ_algor.R): Performs the main analysis, including pre-processing, submits the hierarchical SCMH analysis, and performs block MH (Metropolis-Hastings)
 
-3.   Post-processing: To be posted at a later time
+3. Post-processing: To be posted at a later time
 
 
-   All of the supporting scripts are listed below:
+All of the supporting scripts are listed below:
 
-   Tree.R: The workflow for creating the hierarchical SCMH
-   source.R: Enables automatic hierarchical divisive tree
-   Allfcns2.R: Provides all the necessary functions
-   library_cmdline.R: Provides all the source code needed for SLURM command line input
+1. Tree.R: The workflow for creating the hierarchical SCMH
+2. source.R: Enables automatic hierarchical divisive tree
+3. Allfcns2.R: Provides all the necessary functions
+4. library_cmdline.R: Provides all the source code needed for SLURM command line input
 
-Necessary packages:
 
-install.packages("R.oo")
-install.packages("bmixure")
-install.packages("coda")
-install.packages("parallel")
-install.packages("stringr")
 
 
 
