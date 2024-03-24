@@ -27,8 +27,8 @@ print (paste("sbatch command:",starttree))
 print (" ")
 system(starttree)
 
-
-state <- system(paste("squeue -u emmamit -O  jobid,name:40"),intern=TRUE)
+state <- system(paste("squeue -u", user, "-O jobid,name:40"), intern=TRUE) #allows for username input
+#state <- system(paste("squeue -u emmamit -O  jobid,name:40"),intern=TRUE)
 # collapse character vector into on long string
 state <- paste(state,collapse=" ")
 print("printing state")
