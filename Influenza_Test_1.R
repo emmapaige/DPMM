@@ -26,7 +26,7 @@ a = 1/(J^2) # Penalty term from Dirichlet
 Jname = paste(shortname, copy, "_a",1/a,sep="") #e.g. Jname = Test1_25
 name = paste( "Tests/", Jname, sep = "" )
 numSplits = 3000
-GibbsMC = T
+GibbsMC = F #do not run gibbs step
 
 # create directory 
 dir.create(name)
