@@ -12,13 +12,18 @@ set.seed(copy*10)
 
 # load data
 load("H1N1_Data/H1N1data_Processed/S8_5tE2Data.Rdata")
-
+# We do not want all time points just the first 3 
+numCols = dim(rawdata)[2]-(dim(rawdata)[2]/4)
+rawdata = rawdata[,1:numCols]
+#quick check
+dim(rawdata)
 
 #Try L=1,10 
 # Step0: Global Params
 PostD = c(6,7,8)
 #Pairs = c( "t1t2", "t1t3", "t2t3", "t1t3_D", "t2t3_D" )
-Pairs = c("t1t2","t1t3","t2t3","t1t4","t2t4","t1t5","t2t5","t1t5_D","t2t5_D")
+#Pairs = c("t1t2","t1t3","t2t3","t1t4","t2t4","t1t5","t2t5","t1t5_D","t2t5_D")
+Pairs = c("t1t2","t1t3","t2t3","t1t4","t2t4","t1t4_D","t2t4_D")
 Num = ncol(rawdata)/max(PostD)
 L = 1
 J = nrow(rawdata)
