@@ -1,6 +1,6 @@
 # Influenza Analysis Workflow
 
-This repository contains R scripts for analyzing the last segment of the influenza A virus A/Brisbane/59/2007 strain (NIH Biodefencse and Emerging Infectious Research Resources Repository NIAID, NIH; NR-12282; lot 58550257) with a Dirichlet Process Mixture Model. The data were collected from multiple passages in the presence and absence of an inhibitor of neuraminidase, oseltamivir, for a total of two biological replicates (E1 & E2). The algorithm includes steps for data preparation, a series of MCMC procedures designed to cluster the genome, and a post-analysis summarization of sites that have changed in frequency due to the treatment Oseltamivir. 
+This repository contains R scripts for analyzing the last segment of the influenza A virus A/Brisbane/59/2007 strain time series data (NIH Biodefencse and Emerging Infectious Research Resources Repository NIAID, NIH; NR-12282; lot 58550257) with a Dirichlet Process Mixture Model. The data were collected from multiple passages in the presence and absence of an inhibitor of neuraminidase, oseltamivir, for a total of two biological replicates (E1 & E2). The algorithm includes steps for data preparation, a series of MCMC procedures designed to cluster the genome, and a post-analysis summarization of sites that have changed in frequency due to the treatment Oseltamivir. Note only passages 1,3,9, and 12 are considered for this analysis.
 
 ## Getting Started
 
