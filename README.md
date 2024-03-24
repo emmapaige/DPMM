@@ -1,6 +1,6 @@
-submit_influenza_test_1.sh illustrates how to create a job submission file to run through the algorithm. To run the code, go to the directory where all the supporting scripts are located, then enter 
+submit_test_influenza_1.sh illustrates how to create a job submission file to run through the algorithm. To run the code, go to the directory where all the supporting scripts are located, then enter 
 Make sure to replace your_username with your username. Also make sure to create the Rlogs and slurmlogs folder in your working directory. Once you have created the submission file type SBATCH 
-submit_influenza_test_1.sh
+submit_test_influenza_1.sh
 
 #!/bin/bash
 
