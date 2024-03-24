@@ -51,7 +51,7 @@ sbatch submit_test_influenza_1.sh
 3. Post-processing: To be posted at a later time
 
 
-## All of the supporting scripts are listed below:
+### All of the supporting scripts are listed below:
 
 1. Tree.R: The workflow for creating the hierarchical SCMH
 2. source.R: Enables automatic hierarchical divisive tree
