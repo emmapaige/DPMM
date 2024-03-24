@@ -44,19 +44,19 @@ sbatch submit_test_influenza_1.sh
 
 ### The workflow is divided into several steps, implemented across multiple R scripts:
 
-1. Setup (Influenza_Test_1.R): Prepares the influenza data for analysis and sets up global parameters
+1. Setup (`Influenza_Test_1.R`): Prepares the influenza data for analysis and sets up global parameters
 
-2. Main Script (SHJ_algor.R): Performs the main analysis, including pre-processing, submits the hierarchical SCMH analysis, and performs block MH (Metropolis-Hastings)
+2. Main Script (`SHJ_algor.R`): Performs the main analysis, including pre-processing, submits the hierarchical SCMH analysis, and performs block MH (Metropolis-Hastings)
 
 3. Post-processing: To be posted at a later time
 
 
 ### All of the supporting scripts are listed below:
 
-1. Tree.R: The workflow for creating the hierarchical SCMH
-2. source.R: Enables automatic hierarchical divisive tree
-3. Allfcns2.R: Provides all the necessary functions
-4. library_cmdline.R: Provides all the source code needed for SLURM command line input
+1. `Tree.R`: The workflow for creating the hierarchical SCMH
+2. `source.R`: Enables automatic hierarchical divisive tree
+3. `Allfcns2.R`: Provides all the necessary functions
+4. `library_cmdline.R`: Provides all the source code needed for SLURM command line input
 
 
 
