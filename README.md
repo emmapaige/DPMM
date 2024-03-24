@@ -8,7 +8,7 @@ submit_test_influenza_1.sh
 
 module add r/4.1.3
 
-R CMD BATCH --vanilla --args --shortname=Test --core=2 --copy=1 --user=your_username Influenza_Test_1.R ./Rlogs/Influenza_Test_1.out
+R CMD BATCH --vanilla --args --shortname=Test --core=1 --copy=1 --user=your_username Influenza_Test_1.R ./Rlogs/Influenza_Test_1.out
 
 
 
