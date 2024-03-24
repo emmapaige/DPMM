@@ -25,11 +25,12 @@ install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
 #SBATCH --output=./slurmlogs/slurm-%j.out
 module load r/4.1.3
 R CMD BATCH --vanilla --args --shortname=Test --core=1 --copy=1 --user=your_username Influenza_Test_1.R ./Rlogs/Influenza_Test_1.out
+```
 
 Submit the job with:
-
+``` bash
 sbatch submit_test_influenza_1.sh
-
+```
 
 ### Workflow Overview
 
