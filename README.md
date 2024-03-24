@@ -12,6 +12,11 @@ Ensure R (version 4.1.3 or later) is installed along with the following packages
 install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
 ```
 
+### Installation
+
+Clone this repository:
+
+
 ### Running the Analysis
 
 1. Go to the directory where all the supporting scripts are located
