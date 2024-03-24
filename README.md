@@ -8,8 +8,9 @@ This repository contains R scripts for analyzing influenza data with a Dirichlet
 
 Ensure R (version 4.1.3 or later) is installed along with the following packages:
 
+```{r}
 install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
-
+```
 
 ### Running the Analysis
 
