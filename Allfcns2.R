@@ -785,7 +785,7 @@ GibbsFixScan_Emma <- function(Data,initialC,Scan,a, Record = F, CORE = 2, TempFi
       rs=exp(lrs-max(lrs)) 
       pp=rs/sum(rs)
       C0[ii]=sample(Kseq, size = 1, prob = pp)
-      if( ii %% 10 == 0 ){
+      if( ii %% 100 == 0 ){
         save( ii, Scan0, K, file = TempFile)
       }
 
