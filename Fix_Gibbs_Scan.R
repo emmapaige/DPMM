@@ -9,13 +9,13 @@ source('Allfcns2.R')
 ####### inputs ######
 CORE = 2
 copy = 13
-seg = 'S4_5tE1'
+seg = 'S2_5tE2'
 
 ##################
 
 # load in files and remove any previous result files
 Jname = paste("Test", copy, "_a16",sep="") 
-name = paste( "Tests/", Jname, sep = "" )
+name = paste( "FluTests/", Jname, sep = "" )
 load(paste0(name,'/Data.Rdata'))
 load(paste0("H1N1_Data/H1N1data_Processed/",seg,"Data.Rdata"))
 
