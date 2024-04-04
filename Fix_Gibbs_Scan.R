@@ -45,7 +45,7 @@ save(newC0s, file = paste( name, "/FixGibbsResult.Rdata", sep = "" ) )
   
   
   for(C0 in 1:numC0){
-    subFix=paste("sbatch --constraint=rhel8 -t 11- --mem=5000 -N 1 -n ", CORE, " -J FixGibbs.", Jname, "[",C0,"] -o  ", name, "/SLURMouts/FixGibbs%j.out  --wrap=\"R CMD BATCH --vanilla --args --name=", name,
+    subFix=paste("sbatch --constraint=rhel8 -t 11- --mem=500 -N 1 -n ", CORE, " -J FixGibbs.", Jname, "[",C0,"] -o  ", name, "/SLURMouts/FixGibbs%j.out  --wrap=\"R CMD BATCH --vanilla --args --name=", name,
                  " --copy=",copy, " --core=", CORE, " --Ci=",C0," FixGibbsMC.R ", name,"/Outputs/FixGibbs",C0,".out\"", sep="")
     system(subFix)
     Sys.sleep(1)
