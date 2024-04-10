@@ -24,10 +24,7 @@ dir.create(paste(name,"/Outputs",sep=""))
 dir.create(paste(name,"/SLURMouts",sep=""))
 
 file.remove(paste(name, "/FixGibbsResult.Rdata", sep=""))
-file.remove(paste( name, "/mHtsFixOne.Rdata", sep = "" ))
-file.remove(paste( name, "/ResultLocalFixOne.Rdata", sep = "" ))
-file.remove(paste( name, "/FinalFixOne1.Rdata", sep = "" ))
-file.remove(paste( name, "/InferenceFix1.Rdata",sep=""))
+
 
 load(paste0(name,'/BlockResult.Rdata'))
 load(paste0(name,'/TreeResult.Rdata'))
@@ -44,10 +41,22 @@ save(newC0s, file = paste( name, "/FixGibbsResult.Rdata", sep = "" ) )
   numC0=nrow(newC0s)
   
   
-  for(C0 in 1:numC0){
-    subFix=paste("sbatch --constraint=rhel8 -t 11- --mem=500 -N 1 -n ", CORE, " -J FixGibbs.", Jname, "[",C0,"] -o  ", name, "/SLURMouts/FixGibbs%j.out  --wrap=\"R CMD BATCH --vanilla --args --name=", name,
-                 " --copy=",copy, " --core=", CORE, " --Ci=",C0," FixGibbsMC.R ", name,"/Outputs/FixGibbs",C0,".out\"", sep="")
+  for(C0 in 1:numC0) {
+    # Construct the system command with improved quoting
+    subFix <- sprintf("R CMD BATCH --vanilla --args --name='%s' --copy=%d --core=%d --Ci=%d FixGibbsMC.R '%s/Outputs/FixGibbs%d.out'",
+                      name, copy, CORE, C0, name, C0)
+    
+    # Print the command for debugging purposes
+    cat("Executing command:", subFix, "\n")
+    
+    # Execute the system command
     system(subFix)
+    
+    # Simple delay
     Sys.sleep(1)
+    
+    # Debugging messages
+    cat("Started job for C0 =", C0, "\n")
   }
   
+
