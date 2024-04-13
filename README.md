@@ -9,7 +9,7 @@ This repository contains R scripts for analyzing the last segment of the influen
 Ensure R (version 4.1.3 or later) is installed along with the following packages:
 
 ```{r}
-install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr"))
+install.packages(c("R.oo", "bmixture", "coda", "parallel", "stringr", "fields", "matrixStats", "gtools"))
 ```
 
 ### Installation
